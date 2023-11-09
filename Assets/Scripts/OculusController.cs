@@ -7,6 +7,8 @@ public class OculusController : MonoBehaviour
     public CraneController CraneController;
     Vector2 stickR;
     Vector2 stickL;
+    float gripR;
+    float gripL;
     bool isGrabOn = false;
     // Start is called before the first frame update
     void Start()
@@ -20,6 +22,10 @@ public class OculusController : MonoBehaviour
         //--- Right Controller
         stickR = OVRInput.Get(OVRInput.RawAxis2D.RThumbstick, OVRInput.Controller.RTouch);
         if (stickR.x != 0 || stickR.y != 0) { Debug.Log("Touch: Right Stick: " + stickR); }
+
+        gripR = OVRInput.Get(OVRInput.RawAxis1D.RHandTrigger, OVRInput.Controller.RTouch);
+        if (gripR != 0) { Debug.Log("Touch: Right Grip: " + gripR); }
+
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
             Debug.Log("Touch: A Button (Down)");
@@ -69,6 +75,10 @@ public class OculusController : MonoBehaviour
         //--- Left Controller
         stickL = OVRInput.Get(OVRInput.RawAxis2D.LThumbstick, OVRInput.Controller.LTouch);
         if (stickL.x != 0 || stickL.y != 0) { Debug.Log("Touch: Left Stick: " + stickL); }
+
+        gripL = OVRInput.Get(OVRInput.RawAxis1D.LHandTrigger, OVRInput.Controller.LTouch);
+        if (gripL != 0) { Debug.Log("Touch: Left Grip: " + gripL); }
+
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.LTouch))
         {
             Debug.Log("Touch: X Button (Down)");
@@ -115,7 +125,8 @@ public class OculusController : MonoBehaviour
         }
 
         CraneController.MoveForwardBackward(stickL.y);
-        CraneController.RotateLeftRight(stickL.x);
+        CraneController.RotateLeftRight(-gripL);
+        CraneController.RotateLeftRight(gripR);
         CraneController.MoveUpDown(stickR.y);
         
     }
