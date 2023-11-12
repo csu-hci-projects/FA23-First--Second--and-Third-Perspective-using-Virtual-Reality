@@ -32,6 +32,8 @@ public class RopeControllerRealistic : MonoBehaviour
     public int noOfRopeSectionsToAdd=1;
     public int noOfRopeSectionsToRemove=1;
 
+    [HideInInspector]public float wantedLength;
+
     void Start()
     {
         //Init the line renderer we use to display the rope
@@ -66,7 +68,7 @@ public class RopeControllerRealistic : MonoBehaviour
         DisplayRope();
 
         //Compare the current length of the rope with the wanted length
-        //DebugRopeLength();
+        DebugRopeLength();
 
         //Move what is hanging from the rope to the end of the rope
         whatIsHangingFromTheRope.position = allRopeSections[0].pos;
@@ -382,7 +384,7 @@ public class RopeControllerRealistic : MonoBehaviour
             currentLength += thisLength;
         }
 
-        float wantedLength = ropeSectionLength * (float)(allRopeSections.Count - 1);
+        wantedLength = ropeSectionLength * (float)(allRopeSections.Count - 1);
 
         print("Wanted: " + wantedLength + " Actual: " + currentLength);
     }

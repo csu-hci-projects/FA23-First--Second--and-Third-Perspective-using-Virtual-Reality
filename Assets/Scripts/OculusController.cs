@@ -17,6 +17,8 @@ public class OculusController : MonoBehaviour
     public float cooldown = 1f; // Adjust this value to set the cooldown duration
     private float timer = 0f;
     private float timer2 = 0f;
+    public float minRopeLength;
+    public float maxRopeLength;
     // Start is called before the first frame update
     void Start()
     {
@@ -143,7 +145,10 @@ public class OculusController : MonoBehaviour
             if (Time.time - timer > cooldown)
             {
                 // Call your function here
-                RopeController.DecreaseRopeLength(1);
+                if (RopeController.wantedLength > minRopeLength)
+                {
+                    RopeController.DecreaseRopeLength(1);
+                }
 
                 // Update the timer
                 timer = Time.time;
@@ -161,7 +166,10 @@ public class OculusController : MonoBehaviour
             if (Time.time - timer2 > cooldown)
             {
                 // Call your function here
-                RopeController.IncreaseRopeLength(1);
+                if(RopeController.wantedLength < maxRopeLength)
+                {
+                    RopeController.IncreaseRopeLength(1);
+                }
 
                 // Update the timer
                 timer2 = Time.time;
