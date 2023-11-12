@@ -21,7 +21,7 @@ public class CraneController : MonoBehaviour
     }
     public void MoveForwardBackward(float stickUpDown)
     {
-        RopeConnector.transform.position += stickUpDown * speed * Time.deltaTime * transform.forward;
+        RopeConnector.transform.position += -stickUpDown * speed * Time.deltaTime * transform.right;
     }
     public void MoveUpDown(float Stick2UpDown)
     {

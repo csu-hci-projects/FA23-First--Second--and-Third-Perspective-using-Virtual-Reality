@@ -16,7 +16,7 @@ public class RopeControllerRealistic : MonoBehaviour
     public List<RopeSection> allRopeSections = new List<RopeSection>();
 
     //Rope data
-    private float ropeSectionLength = 1f;
+    public float ropeSectionLength = 1f;
 
     //Data we can change to change the properties of the rope
     //Spring constant
@@ -27,6 +27,10 @@ public class RopeControllerRealistic : MonoBehaviour
     public float aRope = 0.05f;
     //Mass of one rope section
     public float mRopeSection = 0.2f;
+
+    public int initialRopeLength=7;
+    public int noOfRopeSectionsToAdd=1;
+    public int noOfRopeSectionsToRemove=1;
 
     void Start()
     {
@@ -41,7 +45,7 @@ public class RopeControllerRealistic : MonoBehaviour
 
         List<Vector3> ropePositions = new List<Vector3>();
 
-        for (int i = 0; i < 7; i++)
+        for (int i = 0; i < initialRopeLength; i++)
         {
             ropePositions.Add(pos);
 
@@ -62,13 +66,22 @@ public class RopeControllerRealistic : MonoBehaviour
         DisplayRope();
 
         //Compare the current length of the rope with the wanted length
-        DebugRopeLength();
+        //DebugRopeLength();
 
         //Move what is hanging from the rope to the end of the rope
         whatIsHangingFromTheRope.position = allRopeSections[0].pos;
 
         //Make what's hanging from the rope look at the next to last rope position to make it rotate with the rope
         whatIsHangingFromTheRope.LookAt(allRopeSections[1].pos);
+
+        if (Input.GetKeyDown(KeyCode.UpArrow))
+        {
+            IncreaseRopeLength(noOfRopeSectionsToAdd);
+        }
+        if (Input.GetKeyDown(KeyCode.DownArrow))
+        {
+            DecreaseRopeLength(noOfRopeSectionsToRemove);
+        }
     }
 
     void FixedUpdate()
@@ -373,4 +386,52 @@ public class RopeControllerRealistic : MonoBehaviour
 
         print("Wanted: " + wantedLength + " Actual: " + currentLength);
     }
+
+    // Function to dynamically increase the rope's length by adding rope sections
+    public void IncreaseRopeLength(int sectionsToAdd)
+    {
+        for (int i = 0; i < sectionsToAdd; i++)
+        {
+            // Add a new rope section at the bottom
+            allRopeSections.Add(new RopeSection(allRopeSections[allRopeSections.Count - 1].pos - Vector3.up * ropeSectionLength));
+        }
+
+        // Move the entire rope (including hanging object) upward
+        MoveRopeAndHangingObject(Vector3.up * ropeSectionLength * sectionsToAdd);
+    }
+
+
+    // Function to dynamically decrease the rope's length by removing rope sections
+    public void DecreaseRopeLength(int sectionsToRemove)
+    {
+        // Ensure we don't remove more sections than the current count
+        sectionsToRemove = Mathf.Min(sectionsToRemove, allRopeSections.Count - 1);
+
+        for (int i = 0; i < sectionsToRemove; i++)
+        {
+            // Remove the topmost rope section
+            allRopeSections.RemoveAt(0);
+        }
+
+        // Move the entire rope (including hanging object) downward
+        MoveRopeAndHangingObject(Vector3.down * ropeSectionLength * sectionsToRemove);
+    }
+
+    // Helper method to move the entire rope (including hanging object)
+    private void MoveRopeAndHangingObject(Vector3 offset)
+    {
+        for (int i = 0; i < allRopeSections.Count; i++)
+        {
+            RopeSection ropeSection = allRopeSections[i];
+            ropeSection.pos += offset;
+            allRopeSections[i] = ropeSection;
+        }
+
+        // Move what is hanging from the rope downward
+        whatIsHangingFromTheRope.position += offset;
+    }
+
+
+
+
 }

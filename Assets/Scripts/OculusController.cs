@@ -1,15 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class OculusController : MonoBehaviour
 {
     public CraneController CraneController;
+    public RopeControllerRealistic RopeController;
     Vector2 stickR;
     Vector2 stickL;
     float gripR;
     float gripL;
     bool isGrabOn = false;
+    private bool keyIsHeldDown = false;
+    private bool keyIsHeldDown2 = false;
+    public float cooldown = 1f; // Adjust this value to set the cooldown duration
+    private float timer = 0f;
+    private float timer2 = 0f;
     // Start is called before the first frame update
     void Start()
     {
@@ -28,13 +35,8 @@ public class OculusController : MonoBehaviour
 
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
-            Debug.Log("Touch: A Button (Down)");
-            if (isGrabOn)
-            {
-                CraneController.UnGrab();
-                isGrabOn = false;
-            }
-            else
+            Debug.Log("Touch: A Button (Down)");            
+            if(!isGrabOn)
             {
                 CraneController.Grab();
                 isGrabOn = true;
@@ -48,6 +50,11 @@ public class OculusController : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
             Debug.Log("Touch: B Button (Down)");
+            if (isGrabOn)
+            {
+                CraneController.UnGrab();
+                isGrabOn = false;
+            }
         }
         else if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
@@ -124,10 +131,45 @@ public class OculusController : MonoBehaviour
             Debug.Log("Touch: Left Grip (Up)");
         }
 
-        CraneController.MoveForwardBackward(stickL.y);
-        CraneController.RotateLeftRight(-gripL);
-        CraneController.RotateLeftRight(gripR);
-        CraneController.MoveUpDown(stickR.y);
-        
+        CraneController.MoveForwardBackward(stickR.y);
+        CraneController.RotateLeftRight(stickL.x);
+        //CraneController.RotateLeftRight(gripR);
+        //CraneController.MoveUpDown(stickR.y);
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.LTouch))
+        {
+            keyIsHeldDown = true;
+
+            // Check if enough time has passed since the last function call
+            if (Time.time - timer > cooldown)
+            {
+                // Call your function here
+                RopeController.DecreaseRopeLength(1);
+
+                // Update the timer
+                timer = Time.time;
+            }
+        }
+        else
+        {
+            keyIsHeldDown = false;
+        }
+        if (OVRInput.Get(OVRInput.Button.PrimaryIndexTrigger, OVRInput.Controller.RTouch))
+        {
+            keyIsHeldDown2 = true;
+
+            // Check if enough time has passed since the last function call
+            if (Time.time - timer2 > cooldown)
+            {
+                // Call your function here
+                RopeController.IncreaseRopeLength(1);
+
+                // Update the timer
+                timer2 = Time.time;
+            }
+        }
+        else
+        {
+            keyIsHeldDown2 = false;
+        }
     }
 }
