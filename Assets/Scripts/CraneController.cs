@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class CraneController : MonoBehaviour
 {
+    public GameObject GrabArea;
+    public Grabbable Grabbable;
     public float speed = 4f;
     public float rot = 65f;
     public GameObject RopeConnector;
     public GameObject Grabber;
     bool isCollideFBMax=false;
     bool isCollideFBMin=false;
+    bool isGrabbed=false;
     // Start is called before the first frame update
     void Start()
     {
@@ -40,10 +43,24 @@ public class CraneController : MonoBehaviour
     public void Grab()
     {
         print("Grab");
+        if (Grabbable.isNearGrabbable && Grabbable.NearGrabbableObject != null && !isGrabbed)
+        {
+            Destroy(Grabbable.NearGrabbableObject.GetComponent<Rigidbody>());
+            Grabbable.NearGrabbableObject.transform.SetParent(GrabArea.transform);
+            isGrabbed = true;
+            print("grabbed: " + Grabbable.NearGrabbableObject.name);
+        }
     }
     public void UnGrab()
     {
         print("UnGrab");
+        if (isGrabbed)
+        {
+            Grabbable.NearGrabbableObject.transform.SetParent(null);
+            Grabbable.NearGrabbableObject.AddComponent<Rigidbody>();
+            isGrabbed = false;
+            print("ungrabbed: " + Grabbable.NearGrabbableObject.name);
+        }
     }
     public void ifCollideThenDisable(bool isMax)
     {

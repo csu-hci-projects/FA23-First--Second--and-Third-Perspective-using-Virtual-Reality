@@ -386,7 +386,7 @@ public class RopeControllerRealistic : MonoBehaviour
 
         wantedLength = ropeSectionLength * (float)(allRopeSections.Count - 1);
 
-        print("Wanted: " + wantedLength + " Actual: " + currentLength);
+        //print("Wanted: " + wantedLength + " Actual: " + currentLength);
     }
 
     // Function to dynamically increase the rope's length by adding rope sections
