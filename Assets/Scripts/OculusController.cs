@@ -36,11 +36,7 @@ public class OculusController : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
             //Debug.Log("Touch: A Button (Down)");            
-            if(!isGrabOn)
-            {
-                CraneController.Grab();
-                isGrabOn = true;
-            }
+            CraneController.Grab();
         }
         else if (OVRInput.GetUp(OVRInput.Button.One, OVRInput.Controller.RTouch))
         {
@@ -50,11 +46,7 @@ public class OculusController : MonoBehaviour
         if (OVRInput.GetDown(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {
             //Debug.Log("Touch: B Button (Down)");
-            if (isGrabOn)
-            {
-                CraneController.UnGrab();
-                isGrabOn = false;
-            }
+            CraneController.UnGrab();
         }
         else if (OVRInput.GetUp(OVRInput.Button.Two, OVRInput.Controller.RTouch))
         {

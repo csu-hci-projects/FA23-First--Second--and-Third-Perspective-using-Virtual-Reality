@@ -1,11 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Progress;
 
 public class CraneController : MonoBehaviour
 {
     public GameObject GrabArea;
-    public Grabbable Grabbable;
+    public GrabberSphere GrabberSphere;
     public float speed = 4f;
     public float rot = 65f;
     public GameObject RopeConnector;
@@ -13,6 +14,9 @@ public class CraneController : MonoBehaviour
     bool isCollideFBMax=false;
     bool isCollideFBMin=false;
     bool isGrabbed=false;
+    GameObject grabbedObject;
+    public bool isNearGrabbable = false;
+    public GameObject NearGrabbableObject;
     // Start is called before the first frame update
     void Start()
     {
@@ -42,24 +46,40 @@ public class CraneController : MonoBehaviour
     }
     public void Grab()
     {
-        print("Grab");
-        if (Grabbable.isNearGrabbable && Grabbable.NearGrabbableObject != null && !isGrabbed)
+        //print();
+        //print();
+        //print();
+        if (isNearGrabbable && (NearGrabbableObject != null) && !isGrabbed)
         {
-            Destroy(Grabbable.NearGrabbableObject.GetComponent<Rigidbody>());
-            Grabbable.NearGrabbableObject.transform.SetParent(GrabArea.transform);
+            grabbedObject = NearGrabbableObject;
+            //Destroy(Grabbable.NearGrabbableObject.GetComponent<Rigidbody>());
+            grabbedObject.GetComponent<GrabbableItem>().Rb.isKinematic = true;
+            grabbedObject.GetComponent<GrabbableItem>().Rb.velocity = Vector3.zero;
+            grabbedObject.GetComponent<GrabbableItem>().Rb.angularVelocity = Vector3.zero;
+            grabbedObject.transform.SetParent(GrabArea.transform);
+            grabbedObject.transform.localPosition = Vector3.zero;
+            grabbedObject.transform.localEulerAngles = Vector3.zero;
             isGrabbed = true;
-            print("grabbed: " + Grabbable.NearGrabbableObject.name);
+            print("grabbed: " + grabbedObject.name);
+        }
+        else
+        {
+            print("nothing to grab");
         }
     }
     public void UnGrab()
     {
-        print("UnGrab");
         if (isGrabbed)
         {
-            Grabbable.NearGrabbableObject.transform.SetParent(null);
-            Grabbable.NearGrabbableObject.AddComponent<Rigidbody>();
+            grabbedObject.transform.SetParent(null);
+            //Grabbable.NearGrabbableObject.AddComponent<Rigidbody>();
+            grabbedObject.GetComponent<GrabbableItem>().Rb.isKinematic = false;
             isGrabbed = false;
-            print("ungrabbed: " + Grabbable.NearGrabbableObject.name);
+            print("ungrabbed: " + grabbedObject.name);
+        }
+        else
+        {
+            print("nothing to ungrab");
         }
     }
     public void ifCollideThenDisable(bool isMax)
@@ -71,5 +91,17 @@ public class CraneController : MonoBehaviour
     {
         if(isMax) { isCollideFBMax = false; }
         else { isCollideFBMin = false; }
+    }
+    public void GrabberSphereOnTriggerEnter(Collider other)
+    {        
+        Debug.Log("Trigger entered by: " + other.gameObject.name);
+        isNearGrabbable = true;
+        NearGrabbableObject = other.gameObject;
+    }
+    public void GrabberSphereOnTriggerExit(Collider other)
+    {
+        Debug.Log("Trigger exited by: " + other.gameObject.name);
+        isNearGrabbable = false;
+        NearGrabbableObject = null;
     }
 }
