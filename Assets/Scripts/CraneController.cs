@@ -6,7 +6,7 @@ using static UnityEditor.Progress;
 public class CraneController : MonoBehaviour
 {
     public GameObject GrabArea;
-    public GrabberSphere GrabberSphere;
+    //public GrabberSphere GrabberSphere;
     public float speed = 4f;
     public float rot = 65f;
     public GameObject RopeConnector;
@@ -15,8 +15,8 @@ public class CraneController : MonoBehaviour
     bool isCollideFBMin=false;
     bool isGrabbed=false;
     GameObject grabbedObject;
-    public bool isNearGrabbable = false;
-    public GameObject NearGrabbableObject;
+    [HideInInspector]public bool isNearGrabbable = false;
+    [HideInInspector] public GameObject NearGrabbableObject;
     // Start is called before the first frame update
     void Start()
     {
