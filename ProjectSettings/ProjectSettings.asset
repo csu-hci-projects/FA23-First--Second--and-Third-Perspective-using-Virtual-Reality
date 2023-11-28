@@ -139,6 +139,9 @@ PlayerSettings:
   preloadedAssets:
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 11400000, guid: 42b58dc9e47f72f4ca9355e7aabf1faa, type: 2}
+  - {fileID: 11400000, guid: 05652948a2fa7674ebc6da21c7ec879a, type: 2}
+  - {fileID: 502565585061653511, guid: b7d2ce286bad11e4aafcd49d389c51c0, type: 2}
   metroInputSource: 0
   wsaTransparentSwapchain: 0
   m_HolographicPauseOnTrackingLoss: 1
@@ -908,7 +911,7 @@ PlayerSettings:
   m_RenderingPath: 1
   m_MobileRenderingPath: 1
   metroPackageName: 1st2nd3rdVR
-  metroPackageVersion: 
+  metroPackageVersion: 1.0.0.0
   metroCertificatePath: 
   metroCertificatePassword: 
   metroCertificateSubject: 
@@ -916,7 +919,7 @@ PlayerSettings:
   metroCertificateNotAfter: 0000000000000000
   metroApplicationDescription: 1st2nd3rdVR
   wsaImages: {}
-  metroTileShortName: 
+  metroTileShortName: X1st2nd3rdVR
   metroTileShowName: 0
   metroMediumTileShowName: 0
   metroLargeTileShowName: 0
