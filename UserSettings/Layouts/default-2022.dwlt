@@ -19,7 +19,7 @@ MonoBehaviour:
     width: 1920
     height: 989
   m_ShowMode: 4
-  m_Title: Inspector
+  m_Title: Scene
   m_RootView: {fileID: 2}
   m_MinSize: {x: 875, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
@@ -119,7 +119,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 100}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 54
+  controlID: 121
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -187,10 +187,10 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 267
+    width: 281
     height: 640
-  m_MinSize: {x: 201, y: 221}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 200, y: 200}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 13}
   m_Panes:
   - {fileID: 13}
@@ -211,9 +211,9 @@ MonoBehaviour:
   m_Children: []
   m_Position:
     serializedVersion: 2
-    x: 267
+    x: 281
     y: 0
-    width: 1126
+    width: 1112
     height: 640
   m_MinSize: {x: 202, y: 221}
   m_MaxSize: {x: 4002, y: 4021}
@@ -269,8 +269,8 @@ MonoBehaviour:
     y: 0
     width: 527
     height: 939
-  m_MinSize: {x: 276, y: 71}
-  m_MaxSize: {x: 4001, y: 4021}
+  m_MinSize: {x: 275, y: 50}
+  m_MaxSize: {x: 4000, y: 4000}
   m_ActualView: {fileID: 17}
   m_Panes:
   - {fileID: 17}
@@ -296,9 +296,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 267
+    x: 281
     y: 73
-    width: 1124
+    width: 1110
     height: 619
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -658,9 +658,9 @@ MonoBehaviour:
   m_PlayAudio: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 47.42461, y: -37.5808, z: -35.786236}
+    m_Target: {x: -42.674026, y: -59.256706, z: 104.164955}
     speed: 2
-    m_Value: {x: 47.42461, y: -37.5808, z: -35.786236}
+    m_Value: {x: -42.674026, y: -59.256706, z: 104.164955}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -706,13 +706,13 @@ MonoBehaviour:
     m_GridAxis: 1
     m_gridOpacity: 0.5
   m_Rotation:
-    m_Target: {x: 0.13400987, y: 0.8482988, z: -0.25628465, w: 0.44357193}
+    m_Target: {x: 0.2522161, y: -0.16592564, z: 0.043943267, w: 0.95232576}
     speed: 2
-    m_Value: {x: 0.13400987, y: 0.8482988, z: -0.25628465, w: 0.44357193}
+    m_Value: {x: 0.25221616, y: -0.16592567, z: 0.043943275, w: 0.95232594}
   m_Size:
-    m_Target: 53.099285
+    m_Target: 81.464676
     speed: 2
-    m_Value: 53.099285
+    m_Value: 81.464676
   m_Ortho:
     m_Target: 0
     speed: 2
@@ -759,7 +759,7 @@ MonoBehaviour:
     serializedVersion: 2
     x: 0
     y: 73
-    width: 266
+    width: 280
     height: 619
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -774,9 +774,9 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: 6c6c0000
-      m_LastClickedID: 0
-      m_ExpandedIDs: 84a5ffff
+      m_SelectedIDs: 8432ffff
+      m_LastClickedID: -52604
+      m_ExpandedIDs: 5663ffff0064ffffb664ffff3265ffffdc65ffffb468ffff706affff746afffffe6bffff1472ffffc08affff8a9cffff04adffff90beffff0acfffff6ee7ffffcce7ffff26e8ffffb6e8ffff2afbffff
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -820,9 +820,9 @@ MonoBehaviour:
     m_Tooltip: 
   m_Pos:
     serializedVersion: 2
-    x: 267
+    x: 281
     y: 73
-    width: 1124
+    width: 1110
     height: 619
   m_SerializedDataModeController:
     m_DataMode: 0
@@ -840,7 +840,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1124, y: 598}
+  m_TargetSize: {x: 1110, y: 598}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 0
@@ -855,8 +855,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -562
-    m_HBaseRangeMax: 562
+    m_HBaseRangeMin: -555
+    m_HBaseRangeMax: 555
     m_VBaseRangeMin: -299
     m_VBaseRangeMax: 299
     m_HAllowExceedBaseRangeMin: 1
@@ -876,23 +876,23 @@ MonoBehaviour:
       serializedVersion: 2
       x: 0
       y: 21
-      width: 1124
+      width: 1110
       height: 598
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 562, y: 299}
+    m_Translation: {x: 555, y: 299}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
     m_MarginBottom: 0
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
-      x: -562
+      x: -555
       y: -299
-      width: 1124
+      width: 1110
       height: 598
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1124, y: 619}
+  m_LastWindowPixelSize: {x: 1110, y: 619}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 01000000000000000000
@@ -933,7 +933,7 @@ MonoBehaviour:
     m_SaveData: []
     m_OverlaysVisible: 1
   m_SearchFilter:
-    m_NameFilter: 
+    m_NameFilter: grabba
     m_ClassNames: []
     m_AssetLabels: []
     m_AssetBundleNames: []
@@ -943,24 +943,24 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Models/Residential building Free 3D model
+    - Assets/Scripts
     m_Globs: []
-    m_OriginalText: 
+    m_OriginalText: grabba
     m_ImportLogFlags: 0
     m_FilterByTypeIntersection: 0
   m_ViewMode: 1
   m_StartGridSize: 57
   m_LastFolders:
-  - Assets/Models/Residential building Free 3D model
+  - Assets/Scripts
   m_LastFoldersGridSize: 57
   m_LastProjectPath: C:\Tanmay\Unity Projects\FA23-First-Second-and-Third-Perspective-using-Virtual-Reality
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 286}
-    m_SelectedIDs: 3c690000
-    m_LastClickedID: 26940
-    m_ExpandedIDs: 000000004069000050dd000094dd000000ca9a3bffffff7f
+    scrollPos: {x: 0, y: 126}
+    m_SelectedIDs: 488e0000
+    m_LastClickedID: 36424
+    m_ExpandedIDs: 00000000f88d00003c8e000000ca9a3bffffff7f
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -988,7 +988,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 0000000050dd0000
+    m_ExpandedIDs: 00000000f88d0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
