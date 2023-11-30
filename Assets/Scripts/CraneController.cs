@@ -46,9 +46,6 @@ public class CraneController : MonoBehaviour
     }
     public void Grab()
     {
-        //print();
-        //print();
-        //print();
         if (isNearGrabbable && (NearGrabbableObject != null) && !isGrabbed)
         {
             grabbedObject = NearGrabbableObject;
@@ -56,6 +53,7 @@ public class CraneController : MonoBehaviour
             grabbedObject.GetComponent<GrabbableItem>().Rb.isKinematic = true;
             grabbedObject.GetComponent<GrabbableItem>().Rb.velocity = Vector3.zero;
             grabbedObject.GetComponent<GrabbableItem>().Rb.angularVelocity = Vector3.zero;
+            grabbedObject.GetComponent<GrabbableItem>().isGrabbableItemGrabbed = true;
             grabbedObject.transform.SetParent(GrabArea.transform);
             grabbedObject.transform.localPosition = Vector3.zero;
             grabbedObject.transform.localEulerAngles = Vector3.zero;
@@ -74,6 +72,7 @@ public class CraneController : MonoBehaviour
             grabbedObject.transform.SetParent(null);
             //Grabbable.NearGrabbableObject.AddComponent<Rigidbody>();
             grabbedObject.GetComponent<GrabbableItem>().Rb.isKinematic = false;
+            grabbedObject.GetComponent<GrabbableItem>().isGrabbableItemGrabbed = false;
             isGrabbed = false;
             print("ungrabbed: " + grabbedObject.name);
         }
