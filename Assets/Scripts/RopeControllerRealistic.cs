@@ -76,14 +76,14 @@ public class RopeControllerRealistic : MonoBehaviour
         //Make what's hanging from the rope look at the next to last rope position to make it rotate with the rope
         whatIsHangingFromTheRope.LookAt(allRopeSections[1].pos);
 
-        if (Input.GetKeyDown(KeyCode.UpArrow))
-        {
-            IncreaseRopeLength(noOfRopeSectionsToAdd);
-        }
-        if (Input.GetKeyDown(KeyCode.DownArrow))
-        {
-            DecreaseRopeLength(noOfRopeSectionsToRemove);
-        }
+        //if (Input.GetKeyDown(KeyCode.UpArrow))
+        //{
+        //    IncreaseRopeLength(noOfRopeSectionsToAdd);
+        //}
+        //if (Input.GetKeyDown(KeyCode.DownArrow))
+        //{
+        //    DecreaseRopeLength(noOfRopeSectionsToRemove);
+        //}
     }
 
     void FixedUpdate()
