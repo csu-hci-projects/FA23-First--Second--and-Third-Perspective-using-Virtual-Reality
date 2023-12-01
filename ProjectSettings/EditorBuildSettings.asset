@@ -15,7 +15,7 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenu.unity
     guid: 14cbfeb60cb99e446aa57b5dabbacb64
   - enabled: 1
-    path: Assets/Scenes/UnloadingTruckFirstPerson.unity
+    path: Assets/Scenes/Environment.unity
     guid: fca692e11f1ae1243af7c54c70e5e5bf
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 05652948a2fa7674ebc6da21c7ec879a, type: 2}
