@@ -25193,7 +25193,7 @@ Transform:
   m_GameObject: {fileID: 929731487}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.98, y: 1.54, z: 32.69}
+  m_LocalPosition: {x: -18.98, y: 0.11, z: 32.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -26512,7 +26512,7 @@ Transform:
   m_GameObject: {fileID: 1039453651}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.42, y: 1.54, z: 7.17}
+  m_LocalPosition: {x: 6.42, y: 0.11, z: 7.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -33387,7 +33387,7 @@ Transform:
   m_GameObject: {fileID: 1138383913}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -18.98, y: 1.54, z: 7.17}
+  m_LocalPosition: {x: -18.98, y: 0.11, z: 7.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -39598,7 +39598,7 @@ Transform:
   m_GameObject: {fileID: 1291371098}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -10.9, y: 1.54, z: 7.17}
+  m_LocalPosition: {x: -10.9, y: 0.11, z: 7.17}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -46457,7 +46457,7 @@ Transform:
   m_GameObject: {fileID: 1602083173}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 6.42, y: 1.54, z: 32.69}
+  m_LocalPosition: {x: 6.42, y: 0.11, z: 32.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49006,7 +49006,7 @@ Transform:
   m_GameObject: {fileID: 1783567941}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -6.14, y: 1.54, z: 32.69}
+  m_LocalPosition: {x: -6.14, y: 0.11, z: 32.69}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -49529,7 +49529,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 272185cb6d05bcb43b50976558707882, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.090416
+      value: 0.15
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 272185cb6d05bcb43b50976558707882, type: 3}
       propertyPath: m_LocalPosition.z
@@ -49679,9 +49679,9 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  - 3
   - 0
-  - 0
-  - 0
+  - 7
   cargoAttachmentPoint: {fileID: 1485015347}
   attachCargoWaypoints: 00000000
   detachCargoWaypoints: 03000000
