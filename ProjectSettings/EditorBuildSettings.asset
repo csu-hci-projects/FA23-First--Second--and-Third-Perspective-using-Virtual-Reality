@@ -5,18 +5,24 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: Assets/Scenes/Main Scene.unity
-    guid: 9fc0d4010bbf28b4594072e72b8655ab
-  - enabled: 0
-    path: Assets/Scenes/Rope Test.unity
-    guid: e8c4a032a871c9941ac8979a2b8d54c7
   - enabled: 1
-    path: Assets/Scenes/MainMenu.unity
-    guid: 14cbfeb60cb99e446aa57b5dabbacb64
-  - enabled: 1
-    path: Assets/Scenes/Environment.unity
-    guid: fca692e11f1ae1243af7c54c70e5e5bf
+    path: Assets/Scenes/Task1 P1.unity
+    guid: f38825c40e4318744baaec6a3ec5bb77
+  - enabled: 0
+    path: Assets/Scenes/Task1 P3.unity
+    guid: cf19b2b8477e95445b616618444ac0e7
+  - enabled: 0
+    path: Assets/Scenes/Task2 P1.unity
+    guid: dabf9aab9068b444cbcda6bb6b02c55a
+  - enabled: 0
+    path: Assets/Scenes/Task2 P3.unity
+    guid: e714ad517cd31e44183eaa30a5eccede
+  - enabled: 0
+    path: Assets/Scenes/Task3 P1.unity
+    guid: 4027acfb954a25545baa765eaea9befe
+  - enabled: 0
+    path: Assets/Scenes/Task3 P3.unity
+    guid: 1faf14db3a0c0c94381d9e9a86847d8b
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 05652948a2fa7674ebc6da21c7ec879a, type: 2}
     com.unity.xr.management.loader_settings: {fileID: 11400000, guid: b7d2ce286bad11e4aafcd49d389c51c0, type: 2}
