@@ -26,6 +26,10 @@ The purpose of the study is to compare differences in safety and performance bet
 * B to ungrab
 * Left and right grip triggers to rotate yourself around crane in 3rd person scenes
 ## Short Video
+[Short Video Link]()
 ## Presentation Video
+[Presentation Video Link]()
 ## GitHub
+[GitHub Link](https://github.com/csu-hci-projects/FA23-First-Second-and-Third-Perspective-using-Virtual-Reality/tree/main)
 ## Overleaf
+[Overleaf Link]()
