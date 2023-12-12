@@ -32,4 +32,4 @@ The purpose of the study is to compare differences in safety and performance bet
 ## GitHub
 [GitHub Link](https://github.com/csu-hci-projects/FA23-First-Second-and-Third-Perspective-using-Virtual-Reality/tree/main)
 ## Overleaf
-[Overleaf Link]()
+[Overleaf Link](https://www.overleaf.com/read/srndmbgkswqj#379cde)
